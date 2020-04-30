@@ -11,7 +11,7 @@ class ttdInterfaceTest {
     @BeforeEach
     void createObject(){
         String[][] sorter = {{"A", "X"}, {"B", "C"}, {"Z", "Q"}, {"PHP", "Java"}};
-        this.cl = new ttd();
+        this.cl = new ttd(sorter);
     }
 
     @Test
