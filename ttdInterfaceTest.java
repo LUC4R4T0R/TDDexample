@@ -70,4 +70,13 @@ class ttdInterfaceTest {
 
         assertEquals(true, this.cl.isWellSorted(a));
     }
+
+
+    @Test
+    @DisplayName("Test unexpected value")
+    void isWellSortedUnexpectedtrue() {
+        String[] a = {"A", "B", "Z", "X"};
+
+        assertEquals(true, this.cl.isWellSorted(a));
+    }
 }
