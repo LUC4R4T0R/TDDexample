@@ -15,8 +15,17 @@ class ttdInterfaceTest {
 
     @Test
     @DisplayName("Test empty array")
-    void isWellSorted() {
+    void isWellSortedZero() {
         String[] a = new String[0];
+
+        assertEquals(true, this.cl.isWellSorted(a));
+    }
+
+    @Test
+    @DisplayName("Test arrays with only one element")
+    void isWellSortedOne() {
+        String[] a = new String[1];
+        a[0] = "Test";
 
         assertEquals(true, this.cl.isWellSorted(a));
     }
