@@ -79,4 +79,13 @@ class ttdInterfaceTest {
 
         assertEquals(true, this.cl.isWellSorted(a));
     }
+
+    @Test
+    @DisplayName("Test null array")
+    void isWellSortedNullSorter() {
+        this.cl = new ttd(null);
+        String[] a = {"A", "B", "C", "X"};
+
+        assertEquals(true, this.cl.isWellSorted(a));
+    }
 }
