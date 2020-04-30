@@ -81,7 +81,7 @@ class ttdInterfaceTest {
     }
 
     @Test
-    @DisplayName("Test null array")
+    @DisplayName("Test empty ruleset")
     void isWellSortedNullSorter() {
         this.cl = new ttd(null);
         String[] a = {"A", "B", "C", "X"};
