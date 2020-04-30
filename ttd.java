@@ -7,10 +7,12 @@ public class ttd implements ttdInterface{
     }
     @Override
     public boolean isWellSorted(String[] sequence) {
-        for(String[] rule : rules){
-            if(Arrays.asList(sequence).lastIndexOf(rule[0]) != -1 && Arrays.asList(sequence).indexOf(rule[1]) != -1) {
-                if (Arrays.asList(sequence).lastIndexOf(rule[0]) > Arrays.asList(sequence).indexOf(rule[1])) {
-                    return false;
+        if(sequence != null) {
+            for (String[] rule : rules) {
+                if (Arrays.asList(sequence).lastIndexOf(rule[0]) != -1 && Arrays.asList(sequence).indexOf(rule[1]) != -1) {
+                    if (Arrays.asList(sequence).lastIndexOf(rule[0]) > Arrays.asList(sequence).indexOf(rule[1])) {
+                        return false;
+                    }
                 }
             }
         }

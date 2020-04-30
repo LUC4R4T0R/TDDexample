@@ -58,7 +58,7 @@ class ttdInterfaceTest {
     @Test
     @DisplayName("Test for null values")
     void isWellSortedNullElement() {
-        String[] a = {"Java", "B", null, "PHP", "Java", "X"};
+        String[] a = {"B", null, "PHP", "Java", "X"};
 
         assertEquals(true, this.cl.isWellSorted(a));
     }
