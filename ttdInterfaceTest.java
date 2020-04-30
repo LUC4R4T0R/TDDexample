@@ -6,9 +6,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ttdInterfaceTest {
 
+    ttd cl;
+
     @BeforeEach
     void createObject(){
-        ttd cl = new ttd();
+        this.cl = new ttd();
     }
 
     @Test
@@ -16,6 +18,6 @@ class ttdInterfaceTest {
     void isWellSorted() {
         String[] a = new String[0];
 
-        assertEquals(true, cl.isWellSorted(a));
+        assertEquals(true, this.cl.isWellSorted(a));
     }
 }
