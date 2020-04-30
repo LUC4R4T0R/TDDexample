@@ -46,4 +46,12 @@ class ttdInterfaceTest {
 
         assertEquals(false, this.cl.isWellSorted(a));
     }
+
+    @Test
+    @DisplayName("Test multiple occurances of the same String")
+    void isWellSortedMultiFalse() {
+        String[] a = {"Java", "B", "C","PHP", "Java", "X"};
+
+        assertEquals(false, this.cl.isWellSorted(a));
+    }
 }
