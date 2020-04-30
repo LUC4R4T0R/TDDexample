@@ -54,4 +54,20 @@ class ttdInterfaceTest {
 
         assertEquals(false, this.cl.isWellSorted(a));
     }
+
+    @Test
+    @DisplayName("Test for null values")
+    void isWellSortedNullElement() {
+        String[] a = {"Java", "B", null, "PHP", "Java", "X"};
+
+        assertEquals(true, this.cl.isWellSorted(a));
+    }
+
+    @Test
+    @DisplayName("Test null array")
+    void isWellSortedNull() {
+        String[] a = null;
+
+        assertEquals(true, this.cl.isWellSorted(a));
+    }
 }
