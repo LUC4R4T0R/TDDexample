@@ -10,7 +10,7 @@ public class ttd implements ttdInterface{
         if(sequence != null && rules != null) {
             for (String[] rule : rules) {
                 List<String> temp = Arrays.asList(sequence);
-                if (temp.lastIndexOf(rule[0]) != -1 && temp.indexOf(rule[1]) != -1) {
+                if (temp.contains(rule[0])&& temp.contains(rule[1])) {
                     if (temp.lastIndexOf(rule[0]) > temp.indexOf(rule[1])) {
                         return false;
                     }
