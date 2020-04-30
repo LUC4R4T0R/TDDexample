@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ttd implements ttdInterface{
     String[][] rules;
     public ttd(String[][] rules){
@@ -7,6 +9,13 @@ public class ttd implements ttdInterface{
     public boolean isWellSorted(String[] sequence) {
         if(sequence.length <= 1){
             return true;
+        }
+        for(String[] rule : rules){
+            if(Arrays.asList(sequence).lastIndexOf(rule[0]) != -1 && Arrays.asList(sequence).indexOf(rule[1]) != -1) {
+                if (Arrays.asList(sequence).lastIndexOf(rule[0]) > Arrays.asList(sequence).indexOf(rule[1])) {
+                    return false;
+                }
+            }
         }
         return true;
     }
