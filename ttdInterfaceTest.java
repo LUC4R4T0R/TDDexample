@@ -15,7 +15,7 @@ class ttdInterfaceTest {
     }
 
     @Test
-    @DisplayName("Test empty array")
+    @DisplayName("Test empty array | expected true for empty array")
     void isWellSortedZero() {
         String[] a = new String[0];
 
@@ -23,7 +23,7 @@ class ttdInterfaceTest {
     }
 
     @Test
-    @DisplayName("Test arrays with only one element")
+    @DisplayName("Test arrays with only one element | expected true for array with only one element")
     void isWellSortedOne() {
         String[] a = new String[1];
         a[0] = "Test";
@@ -32,7 +32,7 @@ class ttdInterfaceTest {
     }
 
     @Test
-    @DisplayName("Test correct order")
+    @DisplayName("Test correct order | expected true for correct order")
     void isWellSortedOrderTrue() {
         String[] a = {"A", "B", "X"};
 
@@ -40,7 +40,7 @@ class ttdInterfaceTest {
     }
 
     @Test
-    @DisplayName("Test wrong order")
+    @DisplayName("Test wrong order | expected false for wrong order")
     void isWellSortedOrderFalse() {
         String[] a = {"Java", "B", "C","PHP"};
 
@@ -48,7 +48,7 @@ class ttdInterfaceTest {
     }
 
     @Test
-    @DisplayName("Test multiple occurances of the same String")
+    @DisplayName("Test multiple occurances of the same String | expected false")
     void isWellSortedMultiFalse() {
         String[] a = {"Java", "B", "C","PHP", "Java", "X"};
 
@@ -56,7 +56,7 @@ class ttdInterfaceTest {
     }
 
     @Test
-    @DisplayName("Test for null values")
+    @DisplayName("Test for null values | expected true when passing correct order with null element")
     void isWellSortedNullElement() {
         String[] a = {"B", null, "PHP", "Java", "X"};
 
@@ -64,7 +64,7 @@ class ttdInterfaceTest {
     }
 
     @Test
-    @DisplayName("Test null array")
+    @DisplayName("Test null array | expected true for null - array")
     void isWellSortedNull() {
         String[] a = null;
 
@@ -73,7 +73,7 @@ class ttdInterfaceTest {
 
 
     @Test
-    @DisplayName("Test unexpected value")
+    @DisplayName("Test unexpected value | expected true for correct order with unknown element")
     void isWellSortedUnexpectedtrue() {
         String[] a = {"A", "B", "Z", "X"};
 
@@ -81,7 +81,7 @@ class ttdInterfaceTest {
     }
 
     @Test
-    @DisplayName("Test empty ruleset")
+    @DisplayName("Test empty ruleset | expected true for empty ruleset")
     void isWellSortedNullSorter() {
         this.cl = new ttd(null);
         String[] a = {"A", "B", "C", "X"};
