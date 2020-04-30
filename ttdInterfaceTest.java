@@ -10,6 +10,7 @@ class ttdInterfaceTest {
 
     @BeforeEach
     void createObject(){
+        String[][] sorter = {{"A", "X"}, {"B", "C"}, {"Z", "Q"}, {"PHP", "Java"}};
         this.cl = new ttd();
     }
 
@@ -26,6 +27,14 @@ class ttdInterfaceTest {
     void isWellSortedOne() {
         String[] a = new String[1];
         a[0] = "Test";
+
+        assertEquals(true, this.cl.isWellSorted(a));
+    }
+
+    @Test
+    @DisplayName("Test correct order")
+    void isWellSortedOrderTrue() {
+        String[] a = {"A", "B", "X"};
 
         assertEquals(true, this.cl.isWellSorted(a));
     }
