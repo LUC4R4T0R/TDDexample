@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+import java.util.List;
 public class ttd implements ttdInterface{
     String[][] rules;
     public ttd(String[][] rules){
@@ -7,10 +7,11 @@ public class ttd implements ttdInterface{
     }
     @Override
     public boolean isWellSorted(String[] sequence) {
-        if(sequence != null) {
+        if(sequence != null && rules != null) {
             for (String[] rule : rules) {
-                if (Arrays.asList(sequence).lastIndexOf(rule[0]) != -1 && Arrays.asList(sequence).indexOf(rule[1]) != -1) {
-                    if (Arrays.asList(sequence).lastIndexOf(rule[0]) > Arrays.asList(sequence).indexOf(rule[1])) {
+                List<String> temp = Arrays.asList(sequence);
+                if (temp.lastIndexOf(rule[0]) != -1 && temp.indexOf(rule[1]) != -1) {
+                    if (temp.lastIndexOf(rule[0]) > temp.indexOf(rule[1])) {
                         return false;
                     }
                 }
