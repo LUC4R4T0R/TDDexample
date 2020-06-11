@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -81,8 +82,23 @@ public class PartialOrderingTest {
     @Test
     void unerfüllbareBedingung(){
         PartialOrdering p = new PartialOrdering(new String[][]{{"eins", "zwei"}, {"zwei", "eins"}});
-        Iterator<String> s = p.iterator();
-        assertThrows(UnsupportedOperationException.class,()->s.hasNext());
-        assertThrows(UnsupportedOperationException.class,()->s.next());
+        assertThrows(UnsupportedOperationException.class,()-> p.iterator());
+    }
+
+    @DisplayName("Test mit mehreren Regeln unuenstiger Reihenfolge | erware passende loesung")
+    @Test
+    void komplexeRegeln(){
+        String[][] rules = new String[][]{{"a", "b"},{"c", "e"},{"c", "b"},{"e", "a"}};
+        PartialOrdering p = new PartialOrdering(rules);
+        ttd tester = new ttd(rules);
+        TopSortIterator it = (TopSortIterator) p.iterator();
+        String[] sequence = new String[4];
+        int i = 0;
+        while(it.hasNext()){
+            sequence[i] = it.next();
+            i++;
+        }
+        System.out.println("Result:" + Arrays.toString(sequence));
+        assertTrue(tester.isWellSorted(sequence));
     }
 }
