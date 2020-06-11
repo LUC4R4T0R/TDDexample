@@ -51,7 +51,7 @@ public class PartialOrderingTest {
             }
         }
     }
-    @DisplayName("Test mehrere abhängige und unabhängige Regeln")
+    @DisplayName("Test mehrere abhängige und unabhängige Regeln | erwarte mögliche Ordnung")
     @Test
     void mehrereBedingungen(){
         String[][] st = new String[][]{{"eins", "zwei"},
@@ -76,5 +76,13 @@ public class PartialOrderingTest {
             assertEquals("drei", s.next());
         }
         assertEquals("vier", s.next());
+    }
+    @DisplayName("Test mehrere abhängige und unabhängige Regeln | erwarte fehlermeldung")
+    @Test
+    void unerfüllbareBedingung(){
+        PartialOrdering p = new PartialOrdering(new String[][]{{"eins", "zwei"}, {"zwei", "eins"}});
+        Iterator<String> s = p.iterator();
+        assertThrows(UnsupportedOperationException.class,()->s.hasNext());
+        assertThrows(UnsupportedOperationException.class,()->s.next());
     }
 }
